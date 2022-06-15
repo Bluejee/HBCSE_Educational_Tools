@@ -1,22 +1,19 @@
-
 document.getElementById("left").href = "reality.html";
 document.getElementById("right").href = "geometric_a.html";
 
-function Changer(value){
-    const docx = document.documentElement;
-    docx.style.setProperty('--real',1-2*value);
-    docx.style.setProperty('--ideal',2*value);
-    if (value>0.1){docx.style.setProperty('--x1',1);}
-    else{docx.style.setProperty('--x1',0);}
-    if (value>0.5){
-        docx.style.setProperty('--x2',1);
-        docx.style.setProperty('--x3',2-2*value);
-    }  
-    else {
-        docx.style.setProperty('--x2',0);
-        docx.style.setProperty('--x3',1);
+var stage;
+var v_list = ["--x1", "--x2", "--x3", "--x4", "--x5", "--x6"];
+
+function Changer(value) {
+  const docx = document.documentElement;
+
+  stage = value;
+
+  for (let i = 1; i <= 6; i++) {
+    if (value >= i) {
+      docx.style.setProperty(v_list[i - 1], 1);
+    } else {
+      docx.style.setProperty(v_list[i - 1], 0);
     }
-    if (value>0.9)
-    { docx.style.setProperty('--x4',1); }
-    else {docx.style.setProperty('--x4',0);}
+  }
 }

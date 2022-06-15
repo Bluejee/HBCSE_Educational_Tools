@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/frame.css">
     <link rel="stylesheet" href="css/idealisation.css">
+
 </head>
 
 <body>
@@ -33,33 +34,31 @@
         to make it easier to understand
         <p id="descript">
             <br>
-            <input type="range" class="slider" min="0" max="1" step="0.01" value="0" oninput="Changer(this.value)">
+            <input type="range" class="slider" min="0" max="6" step="0.1" value="0" oninput="Changer(this.value)">
         <ul>
-            <li id="item1"> Instead of considering multiple pistons we consider only one.</li>
+            <li id="item1" class="item" style="opacity: var(--x1);"> Instead of considering multiple pistons we consider only one.</li>
             <br>
-            <li class="item2"> Instead of using combustion as a mode of expanding and contracting the gas, we move the
+            <li class="item" style="opacity: var(--x2);"> Instead of using combustion as a mode of expanding and contracting the gas, we move the
                 piston on heat baths.<br></li>
             <br>
-            <li class="item2"> We assume that the heat baths can provide and take infinite energy and are maintained at
+            <li class="item" style="opacity: var(--x3);"> We assume that the heat baths can provide and take infinite energy and are maintained at
                 constant temperatures.<br></li>
             <br>
-            <li class="item2"> The stages used for resting the piston exchanges no heat and the gas is perfectly
+            <li class="item" style="opacity: var(--x4);"> The stages used for resting the piston exchanges no heat and the gas is perfectly
                 isolated on the three other sides<br></li>
             <br>
-            <li class="item2">We further assume that the gas inside the piston is idea and and that there is no friction
+            <li class="item" style="opacity: var(--x5);">We further assume that the gas inside the piston is idea and and that there is no friction
                 between the walls.
             </li>
         </ul>
-        <p id="item3"><b>Let us now place the system in a mathematical grid !</b></p>
+        <p id="item3" class="item" style="opacity: var(--x6);"><b>Let us now place the system in a mathematical grid !</b></p>
         </p>
 
     </div>
 
     <!--White box-->
     <div id="section_2">
-        <div id="knob"></div>
-        <img id="ideal" src="images/pendulum.webp">
-        <img id="real" src="images/swingingGrayGirl.webp">
+
     </div>
 
 </div>
@@ -70,6 +69,9 @@
 <!--script after loading page-->
 <script type="text/javascript" src="js/frame.js"></script>
 <script type="text/javascript" src="js/idealisation.js"></script>
+<script type="text/javascript" src="js/idealisation_p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js" integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 

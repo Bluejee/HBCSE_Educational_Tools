@@ -1,69 +1,108 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Geometric</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <head>
-        <title>Geometric</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/frame.css" />
+    <link rel="stylesheet" href="css/geometric_a.css" />
 
-        <link rel = "stylesheet" href="css/frame.css">
-        <link rel = "stylesheet" href="css/geometric_a.css">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+      integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js"
+      integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js" integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    </head>
+  <body>
+    <!--logo-->
+    <a id="logo" href="index.html"><img src="images/logo.webp" /></a>
 
-    <body>
-        <!--logo-->
-        <a id="logo" href="index.html"><img src="images/logo.webp"></a>
+    <!--page thumbnails-->
+    <div id="page_thumbnails_container"></div>
 
-        <!--page thumbnails-->
-        <div id="page_thumbnails_container"></div>
+    <!--progress-->
+    <div id="progress"></div>
 
-        <!--progress-->
-        <div id="progress"></div>
-        
-        <!--page names-->
-        <div id="page_names"></div>
+    <!--page names-->
+    <div id="page_names"></div>
 
+    <!--content-->
+    <div id="content">
+      <!--Aliceblue box-->
+      <div id="section_1">
+        <p id="heading">
+          <b>Placing the idealized system in a mathematical setting</b>
+        </p>
 
+        We place the idealized system in an isolated 2D environment.<br /><br />
+        <input
+          type="button"
+          value="Click to Start"
+          onclick="document.documentElement.style.setProperty('--start',1); this.remove(); "
+          style="
+            position: absolute;
+            left: 17%;
+            background-color: red;
+            z-index: 10;
+          "
+        />
+        <div id="start_box">
+          The piston is moved from one stand to the other which translates into
+          the motion of the piston.
 
-        <!--content-->
-        <div id="content">
+          <ol>
+            <li id="i1" class="item" style="opacity: var(--i1)">
+              The Piston is initially placed on an isolated stand.
+            </li>
+            <li id="i2" class="item" style="opacity: var(--i2)">
+              The Piston is moved to the heat source.
+            </li>
+            <li id="i3" class="item" style="opacity: var(--i3)">
+              The Piston is placed back on the isolated stand.
+            </li>
+            <li id="i4" class="item" style="opacity: var(--i4)">
+              The Piston is moved to the heat sink.
+            </li>
+            <li id="i5" class="item" style="opacity: var(--i5)">
+              The Piston is placed back on the isolated stand.
+            </li>
+          </ol>
+          <input
+            type="button"
+            value="Click to Procede"
+            id="procede_button"
+            style="
+              opacity: var(--procede);
+              position: absolute;
+              left: 17%;
+              background-color: green;
+              z-index: 10;
+            "
+          />
+        </div>
+      </div>
 
-            <!--Aliceblue box-->
-            <div id="section_1">
-                <p id="heading"><b>Placing the idealized system in a mathematical grid</b></p>
+      <!--White box-->
+      <div id="section_2"></div>
+    </div>
 
-                
-                We place the idealized system in a 2D coordinate system. <br>  
-                <input type="checkbox" id="cord" class="switch" onchange="mark(cord)"><br><br>
-                <span id="item1">
-                 <br>We identify appropriate variables that can characterize the motion of the system. <br><br>
-                <input type="checkbox" id="ankle" class="switch" onchange="mark(ankle)">
-                <label for="ankle"> theta(θ)</label><br>
-                <input type="checkbox" id="legth" class="switch" onchange="mark(legth)"> 
-                <label for="legth"> length of pendulum(l)</label><br>
-                <input type="checkbox" id="amp" class="switch" onchange="mark(amp)">
-                <label for="amp"> amplitude of oscillation(A)</label><br><br>
-                 </span>
-                <b>Adjust timescale :</b><br>
-                <input type="range" id="slider" min="0" max="1" step="0.01" value="1" oninput="timeChanger(this.value)">
-                  
-            </div>
+    <!--navigation-->
+    <span id="navigator"></span>
 
-            <!--White box-->
-            <div id="section_2"></div>
+    <!--script after loading page-->
+    <script type="text/javascript" src="js/frame.js"></script>
+    <script type="text/javascript" src="js/geometric_a.js"></script>
+    <script type="text/javascript" src="js/geometric_p5_a.js"></script>
+    <script type="text/javascript" src="js/Piston.js"></script>
 
-        </div> 
-
-        <!--navigation-->
-        <span id="navigator"></span>
-        
-        <!--script after loading page-->
-        <script type="text/javascript" src="js/frame.js"></script>
-        <script type="text/javascript" src="js/geometric_a.js"></script>
-
-    </body>
-
+</body>
 </html>

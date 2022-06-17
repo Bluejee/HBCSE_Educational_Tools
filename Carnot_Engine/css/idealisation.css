@@ -5,6 +5,10 @@
     --x4:0;
     --x5:0;
     --x6:0;
+    --engine:1;
+    --piston:0;
+    --piston_carnot:0;
+
 }
 
 .thumbnail:nth-child(2),#page_names >text:nth-child(2) {

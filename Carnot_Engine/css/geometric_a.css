@@ -1,5 +1,11 @@
 :root{
-    --x1:0;
+    --start:0;
+    --i1:1;
+    --i2:0;
+    --i3:0;
+    --i4:0;
+    --i5:0;
+    --procede:1;
 }
 .thumbnail:nth-child(3),#page_names >text:nth-child(3) {
     opacity: 1;
@@ -86,10 +92,14 @@ input[type="range"] {
     transform: scale(1.2);
   }
 
- #item1{
-     opacity:var(--x1) ;
+ #start_box{
+     opacity:var(--start) ;
      transition: .7s ease-in;
  } 
+
+  .item{
+    transition: .7s ease-in;
+  }
 
  #infor {
      background-color: rgba(255, 68, 0, 0.527);

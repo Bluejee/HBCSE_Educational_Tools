@@ -113,13 +113,13 @@ function mouseReleased() {
   if (p.in_piston(mouseX, mouseY)) {
     if (mouseX < width / 3) {
       p.x = width / 6;
-      p.y = height - piston_cyl.height / 3 - stands.height;
+      p.y = height - piston_cyl.height / 3 - stand_green.height;
     } else if (mouseX < (2 * width) / 3) {
       p.x = width / 2;
-      p.y = height - piston_cyl.height / 3 - stands.height;
+      p.y = height - piston_cyl.height / 3 - stand_red.height;
     } else if (mouseX < width) {
       p.x = (5 * width) / 6;
-      p.y = height - piston_cyl.height / 3 - stands.height;
+      p.y = height - piston_cyl.height / 3 - stand_grey.height;
     } else {
       print("WTH");
     }

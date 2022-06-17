@@ -12,7 +12,6 @@ let p;
 function preload() {
   piston_cyl = loadImage("./images/Carnot_Engine_Cylinder.png");
   piston_rod = loadImage("./images/Carnot_Engine_Piston.png");
-  stands = loadImage("./images/Stands.png");
   stand_red = loadImage("./images/Stand_Red.png");
   stand_green = loadImage("./images/Stand_Green.png");
   stand_grey = loadImage("./images/Stand_Grey.png");
@@ -29,8 +28,6 @@ function setup() {
 
   // program setup
   imageMode(CENTER);
-  stands.resize(width, (width * stands.height) / stands.width);
-
   stand_red.resize(
     (0.8 * width) / 3,
     (((0.8 * width) / 3) * stand_red.height) / stand_red.width
@@ -51,7 +48,7 @@ function setup() {
 
   p = new Piston(
     width / 2,
-    height - piston_cyl.height / 3 - stands.height,
+    height - piston_cyl.height / 3 - stand_grey.height,
     0,
     piston_cyl,
     piston_rod
@@ -70,7 +67,6 @@ function draw() {
   line((5 * width) / 6, 0, (5 * width) / 6, height);
 
   stroke(0);
-  // stand_img = image(stands, width / 2, height - stands.height / 2);
   img_stand_red = image(stand_red, width / 2, height - stand_red.height / 2);
   img_stand_green = image(
     stand_green,

@@ -1,11 +1,11 @@
 :root{
     --start:0;
     --i1:1;
-    --i2:0;
+    --i2:1;
     --i3:0;
     --i4:0;
     --i5:0;
-    --procede:1;
+    --procede:0;
 }
 .thumbnail:nth-child(3),#page_names >text:nth-child(3) {
     opacity: 1;

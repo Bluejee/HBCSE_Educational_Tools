@@ -63,7 +63,7 @@ function setup() {
   piston_cyl.resize(width / 8, 0.4 * height);
   piston_rod.resize(width / 8.4, width / 8.4);
 
-  cc_0.resize(0.3 * width, 0.4 * width);
+  cc_0.resize(0.4 * width, 0.4 * width);
   cc_1.resize(0.4 * width, 0.4 * width);
   cc_2.resize(0.4 * width, 0.4 * width);
   cc_3.resize(0.4 * width, 0.4 * width);
@@ -84,14 +84,14 @@ function setup() {
 function draw() {
   // clear();
   background(240, 248, 255);
-  fill(255, 0, 0);
-  stroke(255, 0, 0);
-  line(width / 3, 0, width / 3, height);
-  line((2 * width) / 3, 0, (2 * width) / 3, height);
-  stroke(0, 255, 0);
-  line(width / 6, 0, width / 6, height);
-  line((3 * width) / 6, 0, (3 * width) / 6, height);
-  line((5 * width) / 6, 0, (5 * width) / 6, height);
+  // fill(255, 0, 0);
+  // stroke(255, 0, 0);
+  // line(width / 3, 0, width / 3, height);
+  // line((2 * width) / 3, 0, (2 * width) / 3, height);
+  // stroke(0, 255, 0);
+  // line(width / 6, 0, width / 6, height);
+  // line((3 * width) / 6, 0, (3 * width) / 6, height);
+  // line((5 * width) / 6, 0, (5 * width) / 6, height);
 
   // image Setup
   stroke(0);

@@ -1,3 +1,6 @@
+:root{
+  --procede:0;
+}
 
 .thumbnail:nth-child(3),#page_names >text:nth-child(3) {
     opacity: 1;
@@ -85,10 +88,10 @@ input[type="range"] {
 
   #infor {
     background-color: aliceblue;
-    max-width: 40vw;
+    max-width: 60vw;
     max-height: 20vh;
     font-size: small;
-    position: absolute;top:85vh;left:44vw;
+    position: absolute;top:70vh;left:53vw;
     border-radius: 3vh;
     z-index: 5;
 }

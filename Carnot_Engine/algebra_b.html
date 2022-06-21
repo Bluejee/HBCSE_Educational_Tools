@@ -1,87 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Algebra</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <head>
-        <title>Algebra</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/frame.css" />
+    <link rel="stylesheet" href="css/algebra_b.css" />
 
-        <link rel = "stylesheet" href="css/frame.css">
-        <link rel = "stylesheet" href="css/algebra_b.css">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js"
+      integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+      integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js" integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <body>
+    <!--logo-->
+    <a id="logo" href="index.html"><img src="images/logo.webp" /></a>
 
+    <!--page thumbnails-->
+    <div id="page_thumbnails_container"></div>
 
-    </head>
+    <!--progress-->
+    <div id="progress"></div>
 
-    <body>
-        <!--logo-->
-        <a id="logo" href="index.html"><img src="images/logo.webp"></a>
-        
-        <!--page thumbnails-->
-        <div id="page_thumbnails_container"></div>
+    <!--page names-->
+    <div id="page_names"></div>
 
-        <!--progress-->
-        <div id="progress"></div>
-
-        <!--page names-->
-        <div id="page_names"></div>
-
-        <!--content-->
-        <div id="content">
-
-            <!--Aliceblue box-->
-            <div id="section_1">
-            <!--
+    <!--content-->
+    <div id="content">
+      <!--Aliceblue box-->
+      <div id="section_1">
+        <!--
                 <p id="heading"><b>Algebraic Stage <br> </b></p>
             -->
-                <p class="xp" onclick="xplain(0)" >Torque due to $F_{g}$ and $F_{b}$ , $$\tau_{1} = -(mg-\rho _{f}Vg)Lsin\theta$$
-                    $$ = -(\rho_{b}Vg-\rho _{f}Vg)Lsin\theta $$
-                    $$ = -\rho_{b}Vg(1-\frac{\rho _{f}}{\rho _{b}})Lsin\theta $$ </p>
-               
-                <p>Torque due to f' ,$ \tau _{2} = -avL $</p>
-                <p>Net Torque $\hskip 1 em \tau = \tau _{1} + \tau _{2} = -(mg_{e}Lsin\theta + avL)\hskip 10em$  ..eq(2)  </p>
-                <p>Inserting (2)  into the equation $\tau = I\alpha$ ,
-                    <fieldset class="xp" onclick="xplain(1)">
-                    $$ mL\frac{d^{2}\theta }{dt^{2}}+a\frac{d\theta }{dt} + mg_{e}sin\theta = 0$$
-                    </fieldset>
-                </p>
-                <p>is the equation of motion for the pendulum.</p>
-   
-            </div>
+        <p>
+          The word done by the gas in expanding or Compressing isothermally at a
+          temperature $T$ from a volume of $V_a$ to $V_b$ is given by,
+        </p>
+        <p class="xp" onclick="xplain(0)">$$W = nR~T~ln\frac{V_b}{V_a}$$</p>
 
-            <!--White box-->
-            <div id="section_2">  
+        <p>
+          As there is no change in internal energy of the system, this work is
+          equal to the heat absorbed in this stage. i.e. $Q = W$
+        </p>
+        <p>
+          For Adiabatic Expansion or Compression, No heat is supplied. But work
+          is done.
+        </p>
 
-                    <text><br><i>click on coloured equations for hints</i></text>
+        <p>
+          The main question we try to answer is the ratio of the fraction of
+          enery supplied from the hot reservoir that is turned into mechanical
+          work.
+        </p>
+        <p>
+          Since the internal energy of the gas is the same at the begining and
+          the end,
+        </p>
+        <p class="xp" onclick="xplain(1)">
+          i.e. efficiency, $$\eta = \frac{Q_H -Q_C}{Q_H} = 1 - \frac{T_C}{T_H}$$
+        </p>
+      </div>
 
-                    <div id="exp0">
-                        <p> Torque , $ \tau=  r\times F $ </p>
-                        <p>Torque from gravity , $$\tau_{g}=  L \times -mg = -mgLsin\theta$$</p>
-                        <P>Torque from buoyant force , $$\tau_{b}=  L \times \rho _{f}Vg = \rho _{f}VgLsin\theta$$</P>
-                    </div>
+      <!--White box-->
+      <div id="section_2" style="display: grid; grid-template-rows: 1fr 8fr;">
+        <text style="grid-row: 1/2"
+          ><br /><i>click on coloured equations for hints</i></text
+        >
+        <div id="content_2" style="grid-row: 2/3"></div>
+        <div id="exp0">
+          <p>
+            Work done by the gas in a small volume expansion of $\Delta V$ is
+            $P~\Delta V$
+          </p>
+          <p>
+            hence the work done in expanding isothermally at a temprature $T$
+            from a volume of $V_a$ to $V_b$ is the area under the curve given by
+            the integral,
+          </p>
+          $$W = \int_{V_a}^{V_b}PdV = \int_{V_a}^{V_b}\frac{nRT}{V}dV =
+          nRT~ln\frac{V_b}{V_a}$$
+        </div>
 
-                    <div id="exp1">
-                        <p>for the pendulum,$$I = mL^{2} $$ </p>
-                        <p> and $$\alpha = \frac{d^{2}\theta }{dt^{2}} ,\hskip 1em v = \frac{d\theta }{dt} $$</p>
-                        <p> $$\Rightarrow mL^{2}\frac{d^{2}\theta }{dt^{2}} = -(mg_{e}Lsin\theta + a\frac{d\theta }{dt}L)$$</p>
-                    </div>
-                    
-            </div>
+        <div id="exp1">
+          <p>We now have the expressions for $Q_H$ and $Q_C$ given as,</p>
+          $$Q_H = nRT_H~ln\frac{V_b}{V_a}$$ $$Q_C = nRT_C~ln\frac{V_c}{V_d}$$
+          <p>
+            In this $a \rightarrow b$ is expansion and $c \rightarrow d$ is
+            compression, hence the work done would be negetive. Hence, we
+            interchange the neumerator and denominator.
+          </p>
+          <p>From the equation for Adiabatic Processes,</p>
+          $$PV^\gamma = Constant$$ i.e. <br />
+          $$T_HV_b^{\gamma-1} = T_CV_c^{\gamma-1} $$ $$T_HV_a^{\gamma-1} =
+          T_CV_d^{\gamma-1} $$ From this, we get,<br />
+          $$\frac{V_b}{V_a} = \frac{V_c}{V_d}$$
+          <p>
+            Using these, we can solve for the relationship between $Q$ and $T$
+            as,
+          </p>
+          $$\frac{Q_H}{T_H} = \frac{Q_C}{T_C}$$
+        </div>
+      </div>
+    </div>
 
-        </div> 
+    <!--navigation-->
+    <span id="navigator"></span>
 
-        <!--navigation-->
-        <span id="navigator"></span>
-        
-        <!--script after loading page-->
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script> MathJax = { tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}}; </script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-        <script type="text/javascript" src="js/frame.js"></script>
-        <script type="text/javascript" src="js/algebra_b.js"></script>
-
-    </body>
-
+    <!--script after loading page-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+    ></script>
+    <script type="text/javascript" src="js/frame.js"></script>
+    <script type="text/javascript" src="js/algebra_b.js"></script>
+  </body>
 </html>

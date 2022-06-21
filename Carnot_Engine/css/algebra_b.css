@@ -26,6 +26,7 @@ canvas{
     font-size: 80%;
     border: 0;
     padding-left: 2vw; 
+    overflow-y:scroll;
 }
 #heading{
     width: 30%;
@@ -47,13 +48,17 @@ canvas{
 }
 #exp0{
     margin: auto;
-    padding-top: 7vw;
-    opacity: var(--exp0);
+    padding-top: 4vw;
+    opacity: 0;
     position: fixed;
+    width: 20vw;
+
 }
 #exp1{
     margin: auto;
-    padding-top: 7vw;
-    opacity: var(--exp1);
+    padding-top: 4vw;
+    opacity: 0;
     position: fixed;
+    width: 20vw;
+
 }

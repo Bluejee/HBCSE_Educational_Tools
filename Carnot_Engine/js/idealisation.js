@@ -28,13 +28,13 @@ function Changer(value) {
   // console.log(value);
   if (0 <= value && value <= 2) {
     docx.style.setProperty("--piston_carnot", 0);
-    docx.style.setProperty("--engine", map(value, 2, 0, 0, 1));
+    docx.style.setProperty("--engine", map(value, 1.5, 0, 0, 1));
     docx.style.setProperty("--piston", map(value, 2, 0, 1, 0));
   } else {
     docx.style.setProperty("--engine", 0);
   }
-  if (2 < value && value <= 4) {
-    docx.style.setProperty("--piston_carnot", map(value, 2, 4, 0, 1));
+  if (2 < value && value <= 4) { 
+    docx.style.setProperty("--piston_carnot", map(value, 3, 4, 0, 1));
     docx.style.setProperty("--piston", map(value, 2, 4, 1, 0));
   } else if (value > 4) {
     docx.style.setProperty("--piston", 0);

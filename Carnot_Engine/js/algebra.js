@@ -1,97 +1,46 @@
-
 document.getElementById("left").href = "geometric_b.html";
 document.getElementById("right").href = "algebra_b.html";
 
-// *********************** PENDULUM PART************** //
+function shw(n) {
+  im_list = [cc_1, cc_2, cc_3, cc_4];
+  graph_img = im_list[n];
 
-gbv = [250,250,250];
-function shw(i)
-{   
-    gbv = [50,50,50];
-    gbv[i] =250;
+  ie = 'In Isothermal Expansion, Heat is given into the system. It is this heat that causes the piston to rise upwards.'
+  ae = 'In Adiabatic Expansion, There is no heat exchange. The movement of the piston is due to the internal energy being converted into work. Pressure drops rapidly during this phase.' 
+  ic = 'In Isothermal Compression, Heat is taken out of the system. This causes the Piston to come downwards.'
+  ac = 'In Adiabatic Compression, There is no heat exchange. The movement of the piston is due to the internal energy change. Pressure increases rapidly during this phase.' 
+
+  tx_list = [ie,ae,ic,ac]
+  select("#section_2_2").html(tx_list[n])
 }
 
-explan = [0,0];
-function xplain(i)
-{
-    explan = [0,0];
-    explan[i] = 1;
-    gbv = [250,250,250];
-
-    const docx = document.documentElement;
-    docx.style.setProperty('--exp0',explan[0]);
-    docx.style.setProperty('--exp1',explan[1]);
+function preload() {
+  cc_0 = loadImage("./images/Carnot_Cycle_0.png");
+  cc_1 = loadImage("./images/Carnot_Cycle_1.png");
+  cc_2 = loadImage("./images/Carnot_Cycle_2.png");
+  cc_3 = loadImage("./images/Carnot_Cycle_3.png");
+  cc_4 = loadImage("./images/Carnot_Cycle_4.png");
 }
 
-function drawArrow(x1, x2,string) 
-{   push();
-    line(x1.x, x1.y, x2.x, x2.y); 
-    var angle = atan2(x1.y - x2.y, x1.x - x2.x); 
-    translate(x2.x, x2.y); 
-    noStroke()
-    text(string,10,10);
-    rotate(angle-HALF_PI); 
-    size =5
-    triangle(-size/2, size, size/2, size, 0, -size/2); 
-    pop();
+function setup() {
+  let s = min(select("#section_2").width, select("#section_2").height);
+  canvas = createCanvas(s, s);
+  canvas.id("default_canvas");
+  canvas.parent("section_2_1");
+  canvas.parent("section_2_1");
+
+  cc_0.resize(s, s);
+  cc_1.resize(s, s);
+  cc_2.resize(s, s);
+  cc_3.resize(s, s);
+  cc_4.resize(s, s);
+
+  graph_img = cc_0;
+
+  imageMode(CENTER);
 }
-
-  
-function draw()
-{
-  /***Create a canvas aka setup***/
-  const wide = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  const tall = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-  p = wide*0.2;
-  q = tall*0.6;
-  var canvas =createCanvas(p,q);
-  canvas.parent('section_2');
-  frameRate(100);
-  o = createVector(p/3,50);
-
-  /***Usual Draw function***/  
-  background(255,255,255);
-  x = 75 + o.x;
-  y = 150 + o.y;
-  theta = atan(2);
-  fill(150,150,200);
-  stroke(100,100,100);
-  line(o.x,o.y,x,y); 
-  line(30,50,p-30,50);
-  ellipse(x,y,20);
- 
-//coordinate (gray)
-  stroke(190,190,190);
-  drawingContext.setLineDash([2,2]);
-  line(o.x,o.y,o.x,y+30);
-  drawingContext.setLineDash([0]);
-
-// angle(orange)
-  noFill();
-  stroke(255,128,0);
-  arc(o.x,o.y,50,50,theta,PI/2);
-  noStroke();
-  fill(255,128,0);
-  text('θ',o.x+5,o.y+40);   
-
-  v1 = createVector(x,y);
-//Gravity(red)
-  v2 = createVector(x,y+q/5);
-  stroke (150,0,0,gbv[0]);
-  fill(150,0,0,gbv[0])
-  drawArrow(v1,v2,'mg');
-
-//buoyancy(blu)
-  v2 = createVector(x,y-q/8);
-  stroke (0,0,150,gbv[1]);
-  fill(0,0,150,gbv[1])
-  drawArrow(v1,v2,'ρVg');
-
-//vis(green) 
-  w =3;
-  v2 = createVector(x+w*15*sin(theta),y-w*15*cos(theta));
-  stroke (0,150,0,gbv[2]);
-  fill(0,150,0,gbv[2])
-  drawArrow(v1,v2,'- av'); 
-
+function draw() {
+  /***Usual Draw function***/
+  background(255, 255, 255);
+  img_graph = image(graph_img, width / 2, height / 2);
 }

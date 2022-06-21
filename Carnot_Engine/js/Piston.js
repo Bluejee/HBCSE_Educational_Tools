@@ -26,7 +26,7 @@ class Piston {
       this.y + 0.15 * this.cyl.height - this.h * 0.4 * this.cyl.height
     );
     this.c = image(this.cyl, this.x, this.y);
-    ellipse(this.x, this.y, 10, 10);
+    // ellipse(this.x, this.y, 10, 10);
   }
   in_piston(mx, my) {
     let xmax = this.x + this.cyl.width / 2;

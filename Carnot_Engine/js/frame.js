@@ -1,5 +1,5 @@
 
-document.getElementById('page_thumbnails_container').innerHTML = '<a class="thumbnail" href="reality.html"><img src="images/Car_Engine.jpg"></a><a class="thumbnail" href="idealisation.html"><img  src="images/Carnot_Engine.png"></a><a class="thumbnail" href="geometric_a.html"><img  src="images/Carnot_Cycle.png"></a><a class="thumbnail" href="algebra.html"><img  src="images/Efficiency_Eqn.png"></a>';
+document.getElementById('page_thumbnails_container').innerHTML = '<a class="thumbnail" href="reality.html"><img src="images/Car_Engine.jpg"></a><a class="thumbnail" href="idealisation_a.html"><img  src="images/Carnot_Engine.png"></a><a class="thumbnail" href="geometric_a.html"><img  src="images/Carnot_Cycle.png"></a><a class="thumbnail" href="algebra.html"><img  src="images/Efficiency_Eqn.png"></a>';
 
 document.getElementById('page_names').innerHTML ='<text>Reality</text><text>Idealization</text><text>Geometric</text><text>Algebra</text>';
 

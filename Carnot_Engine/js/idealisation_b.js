@@ -1,4 +1,4 @@
-document.getElementById("left").href = "reality.html";
+document.getElementById("left").href = "idealisation_a.html";
 document.getElementById("right").href = "geometric_a.html";
 
 var stage;

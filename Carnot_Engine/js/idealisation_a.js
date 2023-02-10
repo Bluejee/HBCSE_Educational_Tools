@@ -1,5 +1,5 @@
 document.getElementById("left").href = "reality.html";
-document.getElementById("right").href = "idealisation_b.html"; 
+document.getElementById("right").href = "idealisation_b.html";
 
 var content1 = document.getElementById("content1");
 var content2 = document.getElementById("content2");
@@ -9,7 +9,7 @@ var range = document.getElementById("image_changer_slider");
 var contents = [content1, content2, content3];
 var contentIndex = 0;
 
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
   contents[contentIndex].style.display = "none";
   contentIndex = (contentIndex + 1) % contents.length;
   contents[contentIndex].style.display = "block";
@@ -19,10 +19,6 @@ button.addEventListener("click", function() {
     range.style.display = "block";
   }
 });
-
-
-
-
 
 var stage;
 var v_list = ["--x1", "--x2", "--x3", "--x4", "--x5", "--x6"];
@@ -50,11 +46,11 @@ function Changer(value) {
   } else {
     docx.style.setProperty("--engine", 0);
   }
-  if (5 < value && value <= 6) { 
+  if (5 < value && value <= 6) {
     docx.style.setProperty("--piston_carnot", map(value, 5, 6, 0, 1));
     docx.style.setProperty("--piston", map(value, 5, 6, 1, 0));
-  } 
-  
+  }
+
   if (value == 6) {
     docx.style.setProperty("--piston", 0);
     docx.style.setProperty("--piston_carnot", 1);

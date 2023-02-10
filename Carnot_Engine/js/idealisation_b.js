@@ -1,48 +1,120 @@
 document.getElementById("left").href = "idealisation_a.html";
 document.getElementById("right").href = "geometric_a.html";
 
-var stage;
-var v_list = ["--x1", "--x2", "--x3", "--x4", "--x5", "--x6"];
-function map(value, n1, n2, n3, n4) {
-  return ((value - n1) / (n2 - n1)) * (n4 - n3) + n3;
-}
+function checkBoxDisplay(parent_box) {
+  let elements = parent_box.children;
+  let allHidden = true;
 
-function Changer(value) {
-  const docx = document.documentElement;
-
-  stage = value;
-
-  for (let i = 1; i <= 6; i++) {
-    if (value >= i) {
-      docx.style.setProperty(v_list[i - 1], 1);
-    } else {
-      docx.style.setProperty(v_list[i - 1], 0);
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i].style.display !== "none") {
+      allHidden = false;
+      break;
     }
   }
-  // console.log('value:', 
-  //   value, 'engine:',
-  //   docx.style.getPropertyValue("--engine"),'piston:',
-  //   docx.style.getPropertyValue("--piston"),'piston_carnot:',
-  //   docx.style.getPropertyValue("--piston_carnot")
-  // );
-  // console.log(value);
-  if (0 <= value && value <= 2) {
-    docx.style.setProperty("--piston_carnot", 0);
-    docx.style.setProperty("--engine", map(value, 1.5, 0, 0, 1));
-    docx.style.setProperty("--piston", map(value, 2, 0, 1, 0));
+
+  if (allHidden) {
+    parent_box.style.display = "none";
   } else {
-    docx.style.setProperty("--engine", 0);
+    parent_box.style.display = "block";
   }
-  if (2 < value && value <= 4) { 
-    docx.style.setProperty("--piston_carnot", map(value, 3, 4, 0, 1));
-    docx.style.setProperty("--piston", map(value, 2, 4, 1, 0));
-  } else if (value > 4) {
-    docx.style.setProperty("--piston", 0);
-    docx.style.setProperty("--piston_carnot", 1);
-  }
-  // if (2 < value && value <= 3) {
-  //   docx.style.setProperty("--piston_carnot", map(value, 2, 3, 1, 0));
-  // } else if (value > 2) {
-  //   docx.style.setProperty("--piston_carnot", 1);
-  // }
 }
+
+var start_button = document.getElementById("start-button");
+var answer_button = document.getElementById("answer-button");
+var conclusion = document.getElementById("conclusion");
+
+var intro_1 = document.getElementById("intro_1");
+var intro_2 = document.getElementById("intro_2");
+var intro_3 = document.getElementById("intro_3");
+var intro_4 = document.getElementById("intro_4");
+
+var question1 = document.getElementById("question1");
+var question2 = document.getElementById("question2");
+var question3 = document.getElementById("question3");
+var answer1 = document.getElementById("answer1");
+var answer2 = document.getElementById("answer2");
+var answer3 = document.getElementById("answer3");
+
+parent_boxes = document.getElementsByClassName("parent_box");
+introduction_contents = [intro_1, intro_2, intro_3, intro_4];
+q_contents = [question1, question2, question3];
+a_contents = [answer1, answer2, answer3];
+intro_index = 0;
+q_and_a_index = 0;
+
+window.onload = function () {
+  for (var i = 0; i < parent_boxes.length; i++) {
+    checkBoxDisplay(parent_boxes[i]);
+  }
+};
+
+start_button.addEventListener("click", function () {
+  for (var i = 0; i < parent_boxes.length; i++) {
+    checkBoxDisplay(parent_boxes[i]);
+  }
+
+  if (intro_index < introduction_contents.length) {
+    intro_index = intro_index + 1;
+    if (intro_index < introduction_contents.length) {
+      introduction_contents[intro_index].style.display = "list-item";
+    }
+
+    if (intro_index === introduction_contents.length - 1) {
+      start_button.style.backgroundColor = "red";
+      start_button.innerHTML = "Start";
+    }
+    if (intro_index === introduction_contents.length) {
+      for (var i = 0; i < introduction_contents.length; i++) {
+        introduction_contents[i].style.display = "none";
+      }
+      q_contents[q_and_a_index].style.display = "list-item";
+      q_contents[q_and_a_index].parentNode.style.display = "block";
+
+      // a_contents[q_and_a_index].style.display = "block";
+      answer_button.style.display = "inline-block";
+      for (var i = 0; i < parent_boxes.length; i++) {
+        checkBoxDisplay(parent_boxes[i]);
+      }
+      start_button.style.backgroundColor = "#4caf50";
+      start_button.innerHTML = "Next";
+      start_button.style.display = "none";
+    }
+  } else {
+    q_and_a_index = q_and_a_index + 1;
+    if (q_and_a_index < q_contents.length) {
+      q_contents[q_and_a_index - 1].style.display = "none";
+      a_contents[q_and_a_index - 1].style.display = "none";
+
+      q_contents[q_and_a_index].style.display = "list-item";
+      answer_button.style.display = "inline-block";
+      for (var i = 0; i < parent_boxes.length; i++) {
+        checkBoxDisplay(parent_boxes[i]);
+      }
+      start_button.style.display = "none";
+    }
+    if (q_and_a_index === q_contents.length) {
+      q_contents[q_and_a_index - 1].style.display = "none";
+      a_contents[q_and_a_index - 1].style.display = "none";
+      conclusion.style.display = "block";
+      for (var i = 0; i < parent_boxes.length; i++) {
+        checkBoxDisplay(parent_boxes[i]);
+      }
+      start_button.style.backgroundColor = "blue";
+      start_button.innerHTML =
+        "Let us now place the engine into a geometric setting and identify its stages.";
+    }
+    if (q_and_a_index === q_contents.length + 1) {
+      window.location.replace("geometric_a.html");
+    }
+  }
+});
+
+answer_button.addEventListener("click", function () {
+  for (var i = 0; i < parent_boxes.length; i++) {
+    checkBoxDisplay(parent_boxes[i]);
+  }
+  a_contents[q_and_a_index].style.display = "list-item";
+  a_contents[q_and_a_index].parentNode.style.display = "block";
+  answer_button.style.display = "none";
+  start_button.style.display = "inline-block";
+});

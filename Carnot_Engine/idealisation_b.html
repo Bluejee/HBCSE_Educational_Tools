@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Idealisation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/idealisation.css">
+
+</head>
+
+<body>
+    <!--logo-->
+    <a id="logo" href="index.html"><img src="images/logo.webp"></a>
+
+    <!--page thumbnails-->
+    <div id="page_thumbnails_container"></div>
+
+    <!--progress-->
+    <div id="progress"></div>
+
+    <!--page names-->
+    <div id="page_names"></div>
+
+    <!--content-->
+    <div id="content">
+
+        <!--Aliceblue box-->
+        <div id="section_1">
+            <p id="heading" style="text-align: center;"><b>Creating The Ideal Heat Engine</b></p>
+            <div id="introduction", class="parent_box">
+                <ul style="padding-left: 8%;", class="parent_box">
+                    <li id="intro_1" style="padding-bottom: 2%;">We have previously concluded that the
+                        ideal heat engine would have a
+                        piston that moves between hot and cold sources, eliminating the irreversibility encountered
+                        during combustion.</li>
+                    <li id="intro_2" style="display: none;padding-bottom: 2%;">In addition to the piston movement, other
+                        processes also
+                        take place within the system.</li>
+                    <li id="intro_3" style="display: none;padding-bottom: 2%;">To achieve the most ideal and efficient
+                        heat engine, it is
+                        essential that all processes
+                        occurring within the system are reversible.</li>
+                    <li id="intro_4" style="display: none;padding-bottom: 2%;">To ensure that our system is indeed ideal
+                        and to uncover any
+                        non-ideal processes, let us solve
+                        some questions related to the system's behavior and efficiency.</li>
+                </ul>
+            </div>
+            <!-- this div will contain the question and the answer. -->
+            <div class="parent_box">
+                <div class="questions", class="parent_box">
+                    <ul class="parent_box">
+                        <li id="question1" style="display: none;"> There is a mechanical process that converts
+                            mechanical
+                            energy into thermal energy, which cannot be fully regained. Can you identify this process
+                            and
+                            suggest a solution to overcome this issue? </li>
+                        <li id="question2" style="display: none;"> Heat exchange is necessary for the gas in the piston
+                            to expand and contract in-order for the engine to do work. However, not all processes of
+                            heat exchange are
+                            reversible. For maximum efficiency, it is necessary that the process be reversible. Can you
+                            suggest a solution to
+                            ensure reversibility in the heat exchange process?</li>
+                        <li id="question3" style="display: none;"> The isothermal expansion and compression of the gas
+                            in the piston in the Carnot cycle takes place at the temperature of the heat source and
+                            sink. In order to achieve maximum efficiency, it is necessary to match the temperature of
+                            the gas in the piston with the temperature of the heat source or sink. What is the process
+                            for changing the temperature of the gas in the piston in a reversible manner? Can you
+                            suggest a solution that ensures maximum efficiency in the Carnot cycle?</li>
+                    </ul>
+                </div>
+                <div class="answers", class="parent_box">
+                    <ul class="parent_box">
+                        <li id="answer1" style="display: none;">Friction! <br>Friction can cause irreversibility in the
+                            cycle
+                            and reduce the efficiency of the engine. Therefore, having a piston without friction is
+                            essential for the Carnot engine to achieve the maximum efficiency possible.
+                        </li>
+                        <li id="answer2" style="display: none;">A solution to ensure reversibility in the heat exchange
+                            process is to perform the heat exchange isothermally. This means that the process should
+                            happen slowly enough to maintain a constant temperature, so that the heat exchange is
+                            reversible. for this we use heat sources and sinks that can provide infinite energy and
+                            ensure that the heat baths are maintained at constant tempratures.</li>
+                        <li id="answer3" style="display: none;">To change the temperature of the gas in the piston in a
+                            reversible manner, an adiabatic process must be used. An adiabatic process is a process in
+                            which there is no heat transfer between the system and its surroundings. This can be
+                            achieved by having a thermally insulated piston placed on an insulating stand, so that the
+                            heat transfer between the gas
+                            and the surroundings is minimized.</li>
+                    </ul>
+                </div>
+            </div>
+            <p id="conclusion" style="display: none;"> Gerat!<br> We now have an Ideal Heat Engine. This is called the
+                <b>Carnot Engine</b>.<br>
+                The Carnot engine is a theoretical model that represents an ideal heat engine. It is made up of a
+                frictionless piston that moves between two heat baths at different temperatures. The heat baths provide
+                infinite energy, and their temperatures are maintained constant. The piston is perfectly insulated from
+                the environment and has a perfectly conducting base. The engine operates in a thermally isolated system,
+                with no energy exchange with the surroundings. The Carnot engine operates through a series of reversible
+                isothermal and adiabatic processes, allowing it to achieve the maximum possible efficiency.<br>
+
+                Let us now understand how it works
+            </p>
+            <div style="text-align: center;"><button id="answer-button"
+                    style="display: none; background-color: aqua;">Show Answer</button></div>
+            <div style="text-align: center;"><button id="start-button">Next</button></div>
+
+        </div>
+
+        <!--White box-->
+        <div id="section_2">
+            <img src="images/Carnot_Cycle_rough_transparent_small.gif" alt="Moving Piston"
+                style="height:80%; position:absolute; left:12%; top:10;">
+            <!-- <video loop autoplay muted> <source src="images/Carnot_Cycle_rough.mp4" type="video/mp4"> </video> -->
+        </div>
+
+    </div>
+
+    <!--navigation-->
+    <span id="navigator"></span>
+
+    <!--script after loading page-->
+    <script type="text/javascript" src="js/frame.js"></script>
+    <script type="text/javascript" src="js/idealisation_b.js"></script>
+    <!-- <script type="text/javascript" src="js/idealisation_p5.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js"
+        integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+        integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>

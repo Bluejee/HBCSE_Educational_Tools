@@ -1,88 +1,100 @@
-:root{
-    --x1:0;
-    --x2:0;
-    --x3:0;
-    --x4:0;
-    --x5:0;
-    --x6:0;
-    --engine:1;
-    --piston:0;
-    --piston_carnot:0;
-
+:root {
+  --x1: 0;
+  --x2: 0;
+  --x3: 0;
+  --x4: 0;
+  --x5: 0;
+  --x6: 0;
+  --engine: 1;
+  --piston: 0;
+  --piston_carnot: 0;
 }
 
-.thumbnail:nth-child(2),#page_names >text:nth-child(2) {
-    opacity: 1;
-} 
+#change-content-button,
+#start-button, #answer-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.thumbnail:nth-child(2),
+#page_names > text:nth-child(2) {
+  opacity: 1;
+}
 #bar {
-    width: calc(7vw + 10vw*var(--loader));
+  width: calc(7vw + 10vw * var(--loader));
 }
 .slider {
-    display: block;
-    -webkit-appearance: none;
-    background-color: #ccc;
-    width: 20vw;
-    height: 0.5vh;
-    border-radius: 1vh;
-    margin:  auto;
-    outline:0;
-  }
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color:steelblue ;
-    width: 4vh;
-    height: 4vh;
-    border-radius: 50%;
-    border: .5vh solid #ccc;
-    cursor:pointer;
-    transition: .25s ease-in-out;
-  }
-  .slider::-webkit-slider-thumb:hover {
-      background-color:steelblue;
-      border: .5vh solid #ccc;
-    }
-  .slider::-webkit-slider-thumb:active {
-      transform: scale(1.2);
-  }
+  display: block;
+  -webkit-appearance: none;
+  background-color: #ccc;
+  width: 20vw;
+  height: 0.5vh;
+  border-radius: 1vh;
+  margin: auto;
+  outline: 0;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: steelblue;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  border: 0.5vh solid #ccc;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+.slider::-webkit-slider-thumb:hover {
+  background-color: steelblue;
+  border: 0.5vh solid #ccc;
+}
+.slider::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}
 
-  .slider::-moz-range-thumb {
-    -moz-appearance: none;
-    background-color:steelblue ;
-    width: 4vh;
-    height: 4vh;
-    border-radius: 50%;
-    border: .5vh solid #ccc;
-    cursor:pointer;
-    transition: .25s ease-in-out;
-  }
-  .slider::-moz-range-thumb:hover {
-    background-color:steelblue;
-    border: .5vh solid #ccc;
-  }
+.slider::-moz-range-thumb {
+  -moz-appearance: none;
+  background-color: steelblue;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  border: 0.5vh solid #ccc;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+.slider::-moz-range-thumb:hover {
+  background-color: steelblue;
+  border: 0.5vh solid #ccc;
+}
 .slider::-moz-range-thumb:active {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 #section_2 {
-    display:block;
-    align-items:center;
-    height: 75vh;
-    background-color: rgb(220, 230, 255);
-    position: relative;top: 0;left: 0;
+  display: block;
+  align-items: center;
+  height: 75vh;
+  background-color: rgb(220, 230, 255);
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 #knob {
-    width: 3vw;
-    height: 3vh;
-    background-color:#5b5b5b;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    margin: 0% auto;
+  width: 3vw;
+  height: 3vh;
+  background-color: #5b5b5b;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  margin: 0% auto;
 }
 #ideal {
-    margin: 0% auto;
-    transform-origin: 44% 0% ;
-    animation: swing 10s ease-in-out infinite;
-
+  margin: 0% auto;
+  transform-origin: 44% 0%;
+  animation: swing 10s ease-in-out infinite;
 }
 /* #ideal{
     width: 20vw;
@@ -97,18 +109,18 @@
     position: absolute;top: 1vh;left: 19vw;
 } */
 
-.item{
-    transition: 1s ease-in;
+.item {
+  transition: 1s ease-in;
 }
 
-  @keyframes swing {
-    0% {
-        transform: rotate(.75rad);
-    }
-    50% {
-        transform: rotate(-.75rad);
-    }
-    100% {
-        transform: rotate(.75rad);
-    }
+@keyframes swing {
+  0% {
+    transform: rotate(0.75rad);
+  }
+  50% {
+    transform: rotate(-0.75rad);
+  }
+  100% {
+    transform: rotate(0.75rad);
+  }
 }

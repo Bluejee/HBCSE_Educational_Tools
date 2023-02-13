@@ -10,9 +10,19 @@
   margin: auto;
   border-radius: 1vh;
 }
+.nxt_button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
 .bluebox {
   background-color: rgba(63, 231, 231, 0.411);
-  -webkit-user-select: text; 
+  -webkit-user-select: text;
   -khtml-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
@@ -24,12 +34,12 @@
 
 #section_2 {
   display: grid;
-  grid-template-rows: 1fr 4fr; 
-} 
+  grid-template-rows: 1fr 4fr;
+}
 
 #section_2_1 {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr; 
+  grid-template-columns: 2fr 2fr 1fr;
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -40,4 +50,3 @@
 section_2_1_2
 section_2_1_3
 section_2_2 */
- 

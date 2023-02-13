@@ -1,83 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Geometric</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="css/frame.css" />
-    <link rel="stylesheet" href="css/geometric_bc.css" />
+<head>
+  <title>Geometric</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
-      integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js"
-      integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-  </head>
+  <link rel="stylesheet" href="css/frame.css" />
+  <link rel="stylesheet" href="css/geometric_bc.css" />
 
-  <body>
-    <!--logo-->
-    <a id="logo" href="index.html"><img src="images/logo.webp" /></a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+    integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js"
+    integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
 
-    <!--page thumbnails-->
-    <div id="page_thumbnails_container"></div>
+<body>
+  <!--logo-->
+  <a id="logo" href="index.html"><img src="images/logo.webp" /></a>
 
-    <!--progress-->
-    <div id="progress"></div>
+  <!--page thumbnails-->
+  <div id="page_thumbnails_container"></div>
 
-    <!--page names-->
-    <div id="page_names"></div>
+  <!--progress-->
+  <div id="progress"></div>
 
-    <!--content-->
-    <div id="content">
-      <!--Aliceblue box-->
-      <div id="section_1">
-        <p id="heading"><b>Identifying the Stages of the system</b></p>
-        Since we are interested in the work done by the system, we have to
-        figure out what type of processes the system goes through.<br /><br />
-        <input type="checkbox" id="ie" class="switch" onchange="ienote(this)" />
-        <label for="ie"> Reversible Isothermal Expanssion.</label><br />
-        <input type="checkbox" id="ae" class="switch" onchange="aenote(this)" />
-        <label for="ae"> Reversible Adiabatic Expanssion.</label><br />
-        <input type="checkbox" id="ic" class="switch" onchange="icnote(this)" />
-        <label for="ic"> Reversible Isothermal Compression.</label><br /><br />
-        <input type="checkbox" id="ac" class="switch" onchange="acnote(this)" />
-        <label for="ac"> Reversible Adiabatic Compression.</label><br /><br />
-        <br /><br />
-        <input
-          type="button"
-          value="Click to Procede"
-          id="procede_button"
-          onclick="location.href='algebra.html';"
-          style="
-            opacity: var(--procede);
-            position: absolute; 
-            left: 17%;
-            background-color: green;
-            z-index: 10;
-            padding:0.5vw
-          "
-        />
-      </div>
+  <!--page names-->
+  <div id="page_names"></div>
 
-      <!--White box-->
-      <div id="section_2">
-        <div id="infor"></div>
+  <!--content-->
+  <div id="content">
+    <!--Aliceblue box-->
+    <div id="section_1">
+      <p id="heading"><b>Identifying the Stages of the system</b></p>
+      Since we are interested in the work done by the system, we have to
+      figure out what type of processes the system goes through.<br /><br />
+      <input type="checkbox" id="ie" class="switch" onchange="ienote(this)" />
+      <label for="ie"> Reversible Isothermal Expanssion.</label><br />
+      <input type="checkbox" id="ae" class="switch" onchange="aenote(this)" />
+      <label for="ae"> Reversible Adiabatic Expanssion.</label><br />
+      <input type="checkbox" id="ic" class="switch" onchange="icnote(this)" />
+      <label for="ic"> Reversible Isothermal Compression.</label><br /><br />
+      <input type="checkbox" id="ac" class="switch" onchange="acnote(this)" />
+      <label for="ac"> Reversible Adiabatic Compression.</label><br /><br />
+      <br /><br />
+      <div style="text-align: center;">
+        <input class="nxt_button" type="button" value="Click to Procede" id="procede_button"
+          onclick="location.href='algebra.html';" style="
+              opacity: var(--procede);
+              position: absolute; 
+              left: 17%;
+              background-color: green;
+              z-index: 10;
+              padding:0.5vw
+            " />
       </div>
     </div>
 
-    <!--navigation-->
-    <span id="navigator"></span>
+    <!--White box-->
+    <div id="section_2">
+      <div id="infor"></div>
+    </div>
+  </div>
 
-    <!--script after loading page-->
-    <script type="text/javascript" src="js/frame.js"></script>
-    <script type="text/javascript" src="js/geometric_b.js"></script>
-  </body>
+  <!--navigation-->
+  <span id="navigator"></span>
+
+  <!--script after loading page-->
+  <script type="text/javascript" src="js/frame.js"></script>
+  <script type="text/javascript" src="js/geometric_b.js"></script>
+</body>
+
 </html>

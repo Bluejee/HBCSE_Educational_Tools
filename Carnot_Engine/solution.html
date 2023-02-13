@@ -1,163 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Solving the equation</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/frame.css" />
-    <link rel="stylesheet" href="css/solution.css" />
+<head>
+  <title>Solving the equation</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
-      integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js"
-      integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-  </head>
+  <link rel="stylesheet" href="css/frame.css" />
+  <link rel="stylesheet" href="css/solution.css" />
 
-  <body>
-    <!--logo-->
-    <a id="logo" href="index.html"><img src="images/logo.webp" /></a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+    integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0/sketch.min.js"
+    integrity="sha512-kSEyW+qGJr8nB9W0xap8JTmchLnDdjAh5OBrjWQmWbfjRKRNb1goxSWmJbwFN6Gnf+ruF1fmvQhVwYPt/0hKqA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
 
-    <!--page thumbnails-->
-    <div id="page_thumbnails_container"></div>
+<body>
+  <!--logo-->
+  <a id="logo" href="index.html"><img src="images/logo.webp" /></a>
 
-    <!--page names-->
-    <div id="page_names"></div>
+  <!--page thumbnails-->
+  <div id="page_thumbnails_container"></div>
 
-    <!--progress-->
-    <div id="progress"></div>
+  <!--page names-->
+  <div id="page_names"></div>
 
-    <!--content-->
-    <div id="content">
-      <!--Aliceblue box-->
-      <div id="section_1">
-        <p id="heading">
-          <b>Solving the equation <br /> </b>
+  <!--progress-->
+  <div id="progress"></div>
+
+  <!--content-->
+  <div id="content">
+    <!--Aliceblue box-->
+    <div id="section_1">
+      <p id="heading">
+        <b>Solving the equation <br /> </b>
+      </p>
+      <ul>
+        <li>We have equation of efficiency as</li>
+        <p class="bluebox">$$\eta = 1 - \frac{T_C}{T_H}$$</p>
+
+        <p>
+          We can calculate the efficiency for a given carnot engine by using
+          this equation and analyze optimum conditions for maximum efficiency.
         </p>
-        <ul>
-          <li>We have equation of efficiency as</li>
-          <p class="bluebox">$$\eta = 1 - \frac{T_C}{T_H}$$</p>
 
-          <p>
-            We can calculate the efficiency for a given carnot engine by using
-            this equation and analyze optimum conditions for maximum efficiency.
-          </p>
+        <li>
+          For example let the temprature of the source and sink be the boiling
+          and freezing point of water. Then we have,
+        </li>
+      </ul>
+      <p class="bluebox">
+        (Temprature in kelvin), $$T_H = 373,~~T_C = 273$$ This gives the
+        efficiency of the engine to be, $$\eta = 1 - \frac{T_C}{T_H} = 0.27$$
+      </p>
+      We can see that even for a most ideal engine, the efficiency we can
+      achive using real world tempreatures is very low.<br /><br />
+      Try out diffentent tempreatures for the source and sink to determine
+      achievable efficiencies. <br /><br />
+      Enter the corresponding terms into the widget.
+    </div>
 
-          <li>
-            For example let the temprature of the source and sink be the boiling
-            and freezing point of water. Then we have,
-          </li>
-        </ul>
-        <p class="bluebox">
-          (Temprature in kelvin), $$T_H = 373,~~T_C = 273$$ This gives the
-          efficiency of the engine to be, $$\eta = 1 - \frac{T_C}{T_H} = 0.27$$
-        </p>
-        We can see that even for a most ideal engine, the efficiency we can
-        achive using real world tempreatures is very low.<br /><br />
-        Try out diffentent tempreatures for the source and sink to determine
-        achievable efficiencies. <br /><br />
-        Enter the corresponding terms into the widget.
-      </div>
-
-      <!--White box/canvas-->
-      <div id="section_2">
-        <div id="section_2_1">
-          <div id="section_2_1_1" style="color: red">
-            Source Temprature ::
-            <input
-              type="text"
-              id="th"
-              value="T_H"
-              style="
+    <!--White box/canvas-->
+    <div id="section_2">
+      <div id="section_2_1">
+        <div id="section_2_1_1" style="color: red">
+          Source Temprature ::
+          <input class="nxt_button" type="text" id="th" value="T_H" style="
                 background-color: red;
                 height: 5vh;
                 width: 5vh;
                 text-align: center;
-              "
-            />
-          </div>
-          <div id="section_2_1_2" style="color: green">
-            Sink Temprature ::
-            <input
-              type="text"
-              id="tc"
-              value="T_C"
-              style="
+              " />
+        </div>
+        <div id="section_2_1_2" style="color: green">
+          Sink Temprature ::
+          <input class="nxt_button" type="text" id="tc" value="T_C" style="
                 background-color: green;
                 height: 5vh;
                 width: 5vh;
                 text-align: center;
-              "
-            />
-          </div>
-          <div id="section_2_1_3">
-            <input
-              type="button"
-              id="but"
-              value="Submit"
-              style="background-color: aqua; padding: 1vw; text-align: center"
-              onclick="change()"
-            />
-          </div>
+              " />
         </div>
-        <div id="section_2_2" style="display: grid; align-content: stretch; justify-items: center;">
-          <div
-            class="bluebox"
-            style="
+        <div id="section_2_1_3">
+          <input class="nxt_button" type="button" id="but" value="Submit"
+            style="background-color: aqua; padding: 1vw; text-align: center" onclick="change()" />
+        </div>
+      </div>
+      <div id="section_2_2" style="display: grid; align-content: stretch; justify-items: center;">
+        <div class="bluebox" style="
               display: grid;
               font-size: larger;
               width:60%;
               height: fit-content;
               align-items: center; 
-            "
-          >
-            <p id="th_text">The Source Tempreature = $T_H$</p>
-            <p id="tc_text">The Sink Tempreature = $T_C$</p>
-            <p id="eff_text">
-              The Efficieny of the Engine, $\eta = 1 - \frac{T_C}{T_H} = $
-            </p>
-          </div>
+            ">
+          <p id="th_text">The Source Tempreature = $T_H$</p>
+          <p id="tc_text">The Sink Tempreature = $T_C$</p>
+          <p id="eff_text">
+            The Efficieny of the Engine, $\eta = 1 - \frac{T_C}{T_H} = $
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--navigation-->
-    <span id="navigator"></span>
+  <!--navigation-->
+  <span id="navigator"></span>
 
-    <!--script after loading page-->
-    <!-- 
+  <!--script after loading page-->
+  <!-- 
     <script
       type="text/javascript"
       async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
     ></script> -->
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-        },
-      };
-    </script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-    ></script>
-    <script type="text/javascript" src="js/frame.js"></script>
-    <script type="text/javascript" src="js/solution.js"></script>
-  </body>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script type="text/javascript" src="js/frame.js"></script>
+  <script type="text/javascript" src="js/solution.js"></script>
+</body>
+
 </html>

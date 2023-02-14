@@ -99,6 +99,8 @@ start_button.addEventListener("click", function () {
       for (var i = 0; i < parent_boxes.length; i++) {
         checkBoxDisplay(parent_boxes[i]);
       }
+      // For showing animation.
+      start_animation = true;
       start_button.style.backgroundColor = "blue";
       start_button.innerHTML =
         "Let us now place the engine into a geometric setting and identify its stages.";
@@ -110,6 +112,8 @@ start_button.addEventListener("click", function () {
 });
 
 answer_button.addEventListener("click", function () {
+  checkstate();
+  //  This is a function for the p5 file.
   for (var i = 0; i < parent_boxes.length; i++) {
     checkBoxDisplay(parent_boxes[i]);
   }

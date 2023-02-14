@@ -10,11 +10,11 @@ var show_stand = false;
 var show_baths = false;
 
 function preload() {
-  piston_chamber = loadImage("Images/Carnot_Engine_Cylinder.png");
-  piston = loadImage("Images/Carnot_Engine_Piston.png");
-  hotBath = loadImage("Images/Stand_Red.png");
-  coldBath = loadImage("Images/Stand_Green.png");
-  isolatedStand = loadImage("Images/Stand_Grey.png");
+  piston_chamber = loadImage("images/Carnot_Engine_Cylinder.png");
+  piston = loadImage("images/Carnot_Engine_Piston.png");
+  hotBath = loadImage("images/Stand_Red.png");
+  coldBath = loadImage("images/Stand_Green.png");
+  isolatedStand = loadImage("images/Stand_Grey.png");
 }
 
 function checkstate() {
